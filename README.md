@@ -58,6 +58,7 @@ Here we use Bash parameter expansion:
 ${input%.*} removes the file extension (.mp4, .avi, etc.).
 
 Then we add the _dnxhd.mov suffix.
+
 📌 Example:
 
 ```bash
