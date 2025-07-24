@@ -33,7 +33,7 @@ ffmpeg -i "$input" \
   -c:v dnxhd -b:v 36M -pix_fmt yuv422p \
   -c:a pcm_s16le "$output"
 
-echo "Arquivo convertido para: $output"
+echo "File converted to: $output"
 ```
 
 1. #!/bin/bash
