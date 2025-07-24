@@ -2,7 +2,7 @@
 
 A simple script that converts .mkv, .mp4, and other video files into a format fully compatible with DaVinci Resolve on Linux (tested on Garuda, Manjaro, Arch, and derivatives).
 
-DaVinci Resolve, especially the free version, often struggles with certain video/audio codecs. This script fixes that by converting your file to the DNxHD codec inside a .mov container, with PCM audio — ready to drag straight into the timeline.
+The Issue: DaVinci Resolve, especially the free version, often struggles with certain video/audio codecs. This script fixes that by converting your file to the DNxHD codec inside a .mov container, with PCM audio — ready to drag straight into the timeline.
 
 ✅ Requirements
 FFmpeg
