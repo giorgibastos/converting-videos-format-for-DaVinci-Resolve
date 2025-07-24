@@ -97,7 +97,7 @@ This is uncompressed audio, used to preserve maximum quality.
 Output file name, created earlier with the _dnxhd.mov suffix.
 
 
-5. echo "Arquivo convertido para: $output"
+5. echo "File converted to: $output"
 Just a confirmation message, showing the name of the generated file.
 
 
