@@ -73,33 +73,27 @@ ffmpeg -i "$input" \
   -c:a pcm_s16le "$output"
 ```
 
-Let’s break it down:
-
+🔍 Let’s break it down:
 -i "$input"
-   Sets the input file (original video).
+Sets the input file (original video).
 
 -c:v dnxhd
-   Sets the video codec to DNxHD (used in professional workflows like Avid Media Composer).
+Sets the video codec to DNxHD (used in professional workflows like Avid Media Composer).
 
 -b:v 36M
-   Sets the video bitrate to 36 Mbps (megabits per second).
-   DNxHD works with fixed bitrates. 36 Mbps is compatible with resolutions like 720p @ 25fps.
+Sets the video bitrate to 36 Mbps (megabits per second).
+DNxHD works with fixed bitrates. 36 Mbps is compatible with resolutions like 720p @ 25fps.
 
 -pix_fmt yuv422p
-   Sets the pixel format to YUV 4:2:2 planar.
-   This format offers better color quality than 4:2:0, making it ideal for editing.
+Sets the pixel format to YUV 4:2:2 planar.
+This format offers better color quality than 4:2:0, making it ideal for editing.
 
 -c:a pcm_s16le
-   Sets the audio codec to PCM linear, 16-bit, little endian.
-   This is uncompressed audio, used to preserve maximum quality.
+Sets the audio codec to PCM linear, 16-bit, little endian.
+This is uncompressed audio, used to preserve maximum quality.
 
 "$output"
-   Output file name, created earlier with the _dnxhd.mov suffix.
+Output file name, created earlier with the _dnxhd.mov suffix.
 
-
-5. echo "File converted to: $output"
-   Just a confirmation message, showing the name of the generated file.
-
-
-
-
+echo "File converted to: $output"
+Just a confirmation message, showing the name of the generated file.
