@@ -37,66 +37,68 @@ echo "Arquivo convertido para: $output"
 ```
 
 1. #!/bin/bash
-Isso aqui é o shebang — indica qual interpretador será usado para rodar o script.
+This is the shebang — it tells the system which interpreter to use to run the script.
 
-No caso, estamos usando o Bash Shell.
+In this case, we are using the Bash Shell.
 
 2. input="$1"
-A variável input recebe o primeiro argumento passado na linha de comando.
+The input variable receives the first argument passed via the command line.
 
-Exemplo de uso:
+Example of usage:
+
 ```bash
 ./script.sh video.mp4
 ```
 
-Nesse caso, input="video.mp4".
+In this case, input="video.mp4".
 
 3. output="${input%.*}_dnxhd.mov"
-Aqui usamos expansão de parâmetros do Bash:
+Here we use Bash parameter expansion:
 
-${input%.*} remove a extensão do arquivo (.mp4, .avi, etc.).
+${input%.*} removes the file extension (.mp4, .avi, etc.).
 
-Depois adicionamos o sufixo _dnxhd.mov.
-📌 Exemplo:
+Then we add the _dnxhd.mov suffix.
+📌 Example:
+
 ```bash
 input="meuvideo.mp4"
 output="meuvideo_dnxhd.mov"
 ```
 
-4. O comando ffmpeg
+4. The command ffmpeg
 ```bash
 ffmpeg -i "$input" \
   -c:v dnxhd -b:v 36M -pix_fmt yuv422p \
   -c:a pcm_s16le "$output"
 ```
 
-Vamos por partes:
+Let’s break it down:
 
 -i "$input"
-Define o arquivo de entrada (vídeo original).
+Sets the input file (original video).
 
 -c:v dnxhd
-Define o codec de vídeo como DNxHD (usado em workflows profissionais como Avid Media Composer).
+Sets the video codec to DNxHD (used in professional workflows like Avid Media Composer).
 
 -b:v 36M
-Define o bitrate do vídeo: 36 Mbps (megabits por segundo).
-
-DNxHD funciona com bitrates fixos. 36 Mbps é compatível com resoluções como 720p @ 25fps.
+Sets the video bitrate to 36 Mbps (megabits per second).
+DNxHD works with fixed bitrates. 36 Mbps is compatible with resolutions like 720p @ 25fps.
 
 -pix_fmt yuv422p
-Define o formato de pixel como YUV 4:2:2 planar.
-
-Esse formato tem mais qualidade de cor que o 4:2:0, ideal pra edição.
+Sets the pixel format to YUV 4:2:2 planar.
+This format offers better color quality than 4:2:0, making it ideal for editing.
 
 -c:a pcm_s16le
-Define o codec de áudio como PCM linear, 16 bits, little endian.
-
-É áudio sem compressão, usado para preservar qualidade máxima.
+Sets the audio codec to PCM linear, 16-bit, little endian.
+This is uncompressed audio, used to preserve maximum quality.
 
 "$output"
-Nome do arquivo de saída que criamos anteriormente com _dnxhd.mov no final.
+Output file name, created earlier with the _dnxhd.mov suffix.
+
 
 5. echo "Arquivo convertido para: $output"
-Apenas uma mensagem de confirmação, mostrando o nome do arquivo gerado.
+Just a confirmation message, showing the name of the generated file.
+
+
 
 
