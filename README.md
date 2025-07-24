@@ -98,7 +98,7 @@ Output file name, created earlier with the _dnxhd.mov suffix.
 
 
 5. echo "File converted to: $output"
-Just a confirmation message, showing the name of the generated file.
+   Just a confirmation message, showing the name of the generated file.
 
 
 
